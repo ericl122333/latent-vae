@@ -1,0 +1,9 @@
+torch==1.13.0 
+torchvision>=0.12.0 
+pytorch-lightning==1.8.6 
+omegaconf==2.1.1 
+torchtext>=0.10.0 
+einops==0.6.0 
+ml-collections
+gdown
+-e .

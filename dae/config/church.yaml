@@ -1,0 +1,46 @@
+model:
+  target: dae.autoencoder.AutoencoderKL
+  params:
+    embed_dim: 4
+    monitor: "val/rec_loss"
+    ddconfig:
+      double_z: True
+      z_channels: 4
+      resolution: 256
+      in_channels: 3
+      out_ch: 3
+      ch: 128
+      ch_mult: [ 1,2,4,4 ]  # num_down = len(ch_mult)-1
+      num_res_blocks: 2
+      attn_resolutions: [ ]
+      dropout: 0.0
+    lossconfig:
+      target: torch.nn.Identity
+
+data:
+  target: main.DataModuleFromConfig
+  params:
+    batch_size: 96
+    num_workers: 5
+    wrap: False
+    train:
+      target: dae.data.lsun.LSUNChurchesTrain
+      params:
+        size: 256
+    validation:
+      target: dae.data.lsun.LSUNChurchesValidation
+      params:
+        size: 256
+
+lightning:
+  callbacks:
+    image_logger:
+      target: main.ImageLogger
+      params:
+        batch_frequency: 5000
+        max_images: 8
+        increase_log_steps: False
+
+
+  trainer:
+    benchmark: True

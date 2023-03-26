@@ -1,0 +1,50 @@
+model:
+  target: dae.autoencoder.VQModelInterface
+  params:
+    ckpt_path: configs/first_stage_models/vq-f4/model.yaml
+    embed_dim: 3
+    n_embed: 8192
+    ddconfig:
+      double_z: false
+      z_channels: 3
+      resolution: 256
+      in_channels: 3
+      out_ch: 3
+      ch: 128
+      ch_mult:
+      - 1
+      - 2
+      - 4
+      num_res_blocks: 2
+      attn_resolutions: []
+      dropout: 0.0
+    lossconfig:
+      target: torch.nn.Identity
+
+data:
+  target: main.DataModuleFromConfig
+  params:
+    batch_size: 48
+    num_workers: 5
+    wrap: false
+    train:
+      target: ldm.data.lsun.LSUNBedroomsTrain
+      params:
+        size: 256
+    validation:
+      target: ldm.data.lsun.LSUNBedroomsValidation
+      params:
+        size: 256
+
+
+lightning:
+  callbacks:
+    image_logger:
+      target: main.ImageLogger
+      params:
+        batch_frequency: 5000
+        max_images: 8
+        increase_log_steps: False
+
+  trainer:
+    benchmark: True
