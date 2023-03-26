@@ -107,8 +107,6 @@ def main():
     else:
         label = None
     
-    torch.manual_seed(42)
-    np.random.seed(42)
     samples = pipe.sample(num=args.n_sample, label=label, mweight=float(args.mweight), vweight=float(args.vweight), dae_batchsize=args.dae_batchsize)
     
     if not os.path.isdir("./results"):
