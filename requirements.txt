@@ -1,4 +1,4 @@
-torch==1.13.0 
+torch==1.13.1
 torchvision>=0.12.0 
 pytorch-lightning==1.8.6 
 omegaconf==2.1.1 
