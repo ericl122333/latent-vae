@@ -4,6 +4,8 @@ Code for the paper *High Fidelity Image Synthesis With Deep VAEs In Latent Space
 The idea of this work is to do fast and high-fidelity image generation, by using deep VAEs (aka hierarchical VAEs) in a low-dimensional latent space. The core generative component is a hierarchical VAE (see e.g. [VDVAE](https://arxiv.org/abs/2011.10650)), which use a sequence of learned conditional distributions to generate samples. 
 Rather than applying the VAE on natural images, we first perform dimensionality reduction, similar to what is done in Stable Diffusion. The importance of this dimensionality reduction is that it alleviates the learning difficulties VAEs normally face when using a per-pixel loss objective. Similar to GANs, and unlike diffusion models, this method uses only one forward pass during generation, meaning it is quite fast.
 
+![Class-conditinoal ImageNet samples](./assets/figure1.png)
+
 #### Instructions
 
 First, clone the repo and change directory into it. Then do:
