@@ -20,19 +20,19 @@ INFO = {
         "dae_config": "dae/config/bedroom.yaml",
         "vae_config": bedroom_config(),
         "weights_name": "./models/bedroom_pipeline.pt",
-        "weights_id": "16LNvSWl2kzsiVUWnbOCTZ1jnp_8UvuL4",
+        "weights_id": "1--uqW9S8-tbMJG8whHDx1qPJeH5W0j9r",
     }),
     "church": ConfigDict({
         "dae_config": "dae/config/church.yaml",
         "vae_config": church_config(),
         "weights_name": "./models/church_pipeline.pt",
-        "weights_id": "1OcMnePRtFKzUT9ZiXxZswd32ijJ7TpLL",
+        "weights_id": "1-174o5MywJYhhOcYI6yzMfUP5DvnlPcK",
     }),
     "imagenet": ConfigDict({
         "dae_config": "dae/config/imagenet.yaml",
         "vae_config": imagenet_config(),
         "weights_name": "./models/inet_pipeline.pt",
-        "weights_id": "1Y_ja6z0e6yv2xh3wwQsv-a_OkFwJGWEo",
+        "weights_id": "1-Td-danBSRX4IhlXAD_CtgFARbu4C9hH",
     }),
 }
 
