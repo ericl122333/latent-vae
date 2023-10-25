@@ -20,9 +20,9 @@ which will create a figure of with $n_row images per row, and $n_sample images i
 
 By default, the codebase will automatically download the relevant models if they are not found in a folder ./models. You can also download them on google drive here, and put them in ./models:
 
-ImageNet-256 [link](https://drive.google.com/file/d/1Y_ja6z0e6yv2xh3wwQsv-a_OkFwJGWEo/view)
-LSUN Bedroom [link](https://drive.google.com/file/d/16LNvSWl2kzsiVUWnbOCTZ1jnp_8UvuL4/view)
-LSUN Church [link](https://drive.google.com/file/d/1OcMnePRtFKzUT9ZiXxZswd32ijJ7TpLL/view)
+ImageNet-256 [link](https://drive.google.com/file/d/1-Td-danBSRX4IhlXAD_CtgFARbu4C9hH/view)
+LSUN Bedroom [link](https://drive.google.com/file/d/1--uqW9S8-tbMJG8whHDx1qPJeH5W0j9r/view)
+LSUN Church [link](https://drive.google.com/file/d/1-174o5MywJYhhOcYI6yzMfUP5DvnlPcK/view)
 
 #### Acknowledgements
 
