@@ -2,7 +2,7 @@
 # with some imports modified
 
 import torch
-import pytorch_lightning as pl
+import torch.nn as nn
 import torch.nn.functional as F
 from contextlib import contextmanager
 
@@ -14,7 +14,9 @@ from .distributions import DiagonalGaussianDistribution
 from .dae_util import instantiate_from_config
 
 
-class VQModel(pl.LightningModule):
+# this used to be a pytorch lightning Module
+# turns out that had weird dependency issues so I just gave up and changed it to nn.Module
+class VQModel(nn.Module):
     def __init__(self,
                  ddconfig,
                  lossconfig,
@@ -285,7 +287,7 @@ class VQModelInterface(VQModel):
         return dec
 
 
-class AutoencoderKL(pl.LightningModule):
+class AutoencoderKL(nn.Module):
     def __init__(self,
                  ddconfig,
                  lossconfig,
